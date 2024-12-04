@@ -35,3 +35,16 @@ document.addEventListener("click", function (e) {
 navbarNav.addEventListener("click", function (e) {
   e.stopPropagation();
 });
+
+// Scroll Reveal
+
+const navbarLinks = document.querySelectorAll(".navbar-nav a");
+
+navbarLinks.forEach((link) => {
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+    const targetId = link.getAttribute("href");
+    const targetElement = document.querySelector(targetId);
+    targetElement.scrollIntoView({ behavior: "smooth" });
+  });
+});

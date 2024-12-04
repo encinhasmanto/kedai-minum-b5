@@ -79,6 +79,51 @@ body {
   display: none;
 }
 
+.navbar-nav a {
+  transition: color 0.2s ease;
+}
+
+.navbar-nav a:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
+}
+
+.navbar-extra a {
+  opacity: 0.2;
+  transition: opacity 0.2s ease;
+}
+
+.navbar-extra a:hover {
+  opacity: 1;
+}
+
+/* #search {
+  transform: translateX(-10%);
+  transition: transform 0.2s ease;
+} */
+
+/* #shoping-cart {
+  transform: translateX(-10%);
+  transition: transform 0.2s ease;
+} */
+
+#hamburger-menu {
+  transform: translateX(-10%);
+  transition: transform 0.2s ease;
+}
+
+/* #search:hover {
+  transform: translateX(0);
+} */
+
+/* #shoping-cart:hover {
+  transform: translateX(0);
+} */
+
+#hamburger-menu:hover {
+  transform: translateX(0);
+}
+
 /* Hero Section */
 
 .hero {
@@ -139,7 +184,8 @@ body {
 }
 
 /* About Us */
-.about, .menu {
+.about,
+.menu {
   padding: 1.4rem 7%;
   padding-top: 6rem;
   font-size: 1.5rem;
@@ -160,7 +206,7 @@ body {
 /* menu about us */
 .about .row {
   display: flex;
-  }
+}
 
 .about .row .about-img {
   flex: 1 1 45rem;
@@ -172,8 +218,8 @@ body {
 
 .about .row .content {
   flex: 1 1 30rem;
-  padding: 0.;
- }
+  padding: 0;
+}
 
 .about .row .content h3 span.Kopi {
   font-style: italic;
@@ -229,6 +275,105 @@ body {
   /* font-style: italic; */
 }
 
+/* ==================================== */
+/* ==================================== */
+/* ==================================== */
+.contact {
+  width: 100%;
+  max-width: 1200px;
+  padding: 2rem;
+}
+
+.contact-container {
+  display: flex;
+  background-color: rgba(109, 78, 48, 0.5);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.contact-info {
+  flex: 1;
+  padding: 3rem;
+}
+
+.contact-info h2 {
+  color: var(--primary);
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.contact-item i {
+  color: var(--bg);
+  margin-right: 1rem;
+  width: 24px;
+  height: 24px;
+}
+
+.contact-item a,
+.contact-item address {
+  color: antiquewhite;
+  text-decoration: none;
+  font-style: normal;
+  transition: color 0.3s ease;
+  margin-left: 2rem;
+}
+
+.contact-item a:hover {
+  color: #ae845c;
+}
+
+.contact-image {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.image-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.contact-container:hover .image-container img {
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+  }
+
+  .contact-info {
+    padding: 2rem;
+  }
+
+  .image-container {
+    position: relative;
+    height: 300px;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
+  }
+}
+
+/* ==================================== */
+/* ==================================== */
+/* ==================================== */
 
 /* Media Qaaries */
 
