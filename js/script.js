@@ -37,14 +37,25 @@ navbarNav.addEventListener("click", function (e) {
 });
 
 // Scroll Reveal
+function setupSmoothScroll(selector) {
+  const smoothLinks = document.querySelectorAll(selector);
 
-const navbarLinks = document.querySelectorAll(".navbar-nav a");
-
-navbarLinks.forEach((link) => {
-  link.addEventListener("click", (event) => {
-    event.preventDefault();
-    const targetId = link.getAttribute("href");
-    const targetElement = document.querySelector(targetId);
-    targetElement.scrollIntoView({ behavior: "smooth" });
+  smoothLinks.forEach((link) => {
+    link.addEventListener("click", function (event) {
+      const targetId = this.getAttribute("href");
+      if (targetId.startsWith("#") && targetId.length > 1) {
+        event.preventDefault();
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }
+      }
+    });
   });
-});
+}
+
+// Apply smooth scrolling to navbar links and CTA buttons
+setupSmoothScroll(".navbar-nav a, .navbar-logo, .cta");

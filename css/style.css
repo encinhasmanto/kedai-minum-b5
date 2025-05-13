@@ -43,7 +43,7 @@ body {
 }
 
 .navbar .navbar-logo span {
-  color: var(--primary);
+  color: rgba(185, 28, 59, 0.753);
 }
 
 .navbar .navbar-nav a {
@@ -70,6 +70,12 @@ body {
   transform: scaleX(0.5);
 }
 
+.navbar.navbar-extra {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .navbar .navbar-extra a {
   color: antiquewhite;
   margin: 0 0.5rem;
@@ -88,40 +94,112 @@ body {
   transition: transform 0.2s ease;
 }
 
+.navbar-extra {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  white-space: nowrap; /* prevent text from wrapping */
+}
+
+/* Default icon opacity */
 .navbar-extra a {
+  color: antiquewhite;
+  margin: 0 0.5rem;
   opacity: 0.2;
   transition: opacity 0.2s ease;
 }
 
+/* When the <a> itself is hovered */
 .navbar-extra a:hover {
   opacity: 1;
 }
 
-/* #search {
-  transform: translateX(-10%);
-  transition: transform 0.2s ease;
-} */
+/* ✅ Also when the container is hovered */
+.search-container:hover a,
+.cart-container:hover a {
+  opacity: 1;
+}
 
-/* #shoping-cart {
+#search {
   transform: translateX(-10%);
   transition: transform 0.2s ease;
-} */
+}
+
+#shopping-cart {
+  transform: translateX(-10%);
+  transition: transform 0.2s ease;
+}
 
 #hamburger-menu {
   transform: translateX(-10%);
   transition: transform 0.2s ease;
 }
 
-/* #search:hover {
+#search:hover {
   transform: translateX(0);
-} */
+}
 
-/* #shoping-cart:hover {
+#shopping-cart:hover {
   transform: translateX(0);
-} */
+}
 
 #hamburger-menu:hover {
   transform: translateX(0);
+}
+
+/* Search and cart styling */
+.search-container,
+.cart-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+#search-icon,
+#cart-icon,
+#hamburger-menu {
+  cursor: pointer;
+  color: antiquewhite;
+}
+
+/* Search input hidden initially */
+#search-box {
+  width: 0;
+  opacity: 0;
+  padding: 0;
+  margin-left: 0.5rem;
+  transition: all 0.3s ease;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  color: #000;
+}
+
+/* Expand input when hovering over search-container */
+.search-container:hover #search-box {
+  width: 150px;
+  opacity: 1;
+  padding: 5px 10px;
+}
+
+/* Cart dropdown styling */
+.cart-content {
+  display: none;
+  position: absolute;
+  top: 120%;
+  right: 0;
+  min-width: 200px;
+  background-color: #fff;
+  color: #000;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 999;
+}
+
+/* Show cart box on hover */
+.cart-container:hover .cart-content {
+  display: block;
 }
 
 /* Hero Section */
@@ -183,6 +261,17 @@ body {
   mix-blend-mode: difference;
 }
 
+.hero .content .cta {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 1rem 3rem;
+  font-size: 1.4rem;
+  color: #fff;
+  background-color: var(--primary);
+  border-radius: 0.5rem;
+  box-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+}
+
 /* About Us */
 .about,
 .menu {
@@ -241,6 +330,7 @@ body {
   margin-bottom: 0.8rem;
 }
 
+/* menu */ 
 .menu p {
   font-size: 1.4rem;
   font-weight: 100;
